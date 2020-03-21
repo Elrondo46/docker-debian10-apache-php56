@@ -17,7 +17,6 @@ RUN apt-get update && \
       apache2 \
       php5.6-cli \
       php5.6-common \
-      php5.6-curl \
       php5.6-mbstring \
       php5.6-mysql \
       php5.6-xml \
