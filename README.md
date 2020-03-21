@@ -6,7 +6,7 @@ A Docker image based on Debian Jessie, serving PHP 5.6 running as Apache Module.
 Tags
 -----
 
-* latest: Debian 8 (Jessie), Apache 2.4, PHP 5.6.x with support for setting `error_reporting`
+* latest: Debian 9 (Buster), Apache 2.x, PHP 5.6.x with support for setting `error_reporting`
 
 Usage
 ------
