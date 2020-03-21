@@ -3,18 +3,24 @@ MAINTAINER Elrondo46 <dd@dd.fr>
 
 VOLUME ["/var/www"]
 
-RUN apt-get update && \
-    apt-get install -y \
+RUN apt install -y ca-certificates \
+    apt-transport-https \
+    wget
+
+RUN wget -q https://packages.sury.org/php/apt.gpg -O- | sudo apt-key add - && \
+echo "deb https://packages.sury.org/php/ stretch main" | sudo tee /etc/apt/sources.list.d/php.list
+
+RUN apt update && \
+    apt install -y \
       locales \
       apache2 \
-      php5 \
-      php5-cli \
-      libapache2-mod-php5 \
-      php5-gd \
-      php5-json \
-      php5-ldap \
-      php5-mysql \
-      php5-pgsql
+      php5.6-cli \
+      php5.6-common \
+      php5.6-curl \
+      php5.6-mbstring \
+      php5.6-mysql \
+      php5.6-xml \
+      libapache2-mod-php5.6 \
 
 COPY apache_default /etc/apache2/sites-available/000-default.conf
 COPY run /usr/local/bin/run
