@@ -15,6 +15,7 @@ RUN apt-get update && \
     apt-get install -y \
       locales \
       apache2 \
+      php5.6 \
       php5.6-cli \
       php5.6-common \
       php5.6-mbstring \
