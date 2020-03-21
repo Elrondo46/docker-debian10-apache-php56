@@ -5,7 +5,7 @@ VOLUME ["/var/www"]
 
 RUN apt update && \ 
     apt install -y ca-certificates \
-    apt-transport-https \
+    apt-transport-https gnupg2 \
     wget
 
 RUN wget -q https://packages.sury.org/php/apt.gpg -O- | apt-key add - && \
