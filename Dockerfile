@@ -25,6 +25,7 @@ RUN apt-get update && \
       php5.6-soap \
       php5.6-zip \
       php5.6-zip-dbgsym \
+      bash \
       libapache2-mod-php5.6
 
 COPY apache_default /etc/apache2/sites-available/000-default.conf
