@@ -3,16 +3,16 @@ MAINTAINER Elrondo46 <dd@dd.fr>
 
 VOLUME ["/var/www"]
 
-RUN apt update && \ 
-    apt install -y ca-certificates \
+RUN apt-get update && \ 
+    apt-get install -y ca-certificates \
     apt-transport-https gnupg2 \
     wget
 
 RUN wget -q https://packages.sury.org/php/apt.gpg -O- | apt-key add - && \
 echo "deb https://packages.sury.org/php/ stretch main" | tee /etc/apt/sources.list.d/php.list
 
-RUN apt update && \
-    apt install -y \
+RUN apt-get update && \
+    apt-get install -y \
       locales \
       apache2 \
       php5.6-cli \
