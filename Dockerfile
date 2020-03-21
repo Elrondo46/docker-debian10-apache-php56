@@ -21,7 +21,7 @@ RUN apt-get update && \
       php5.6-mbstring \
       php5.6-mysql \
       php5.6-xml \
-      libapache2-mod-php5.6 \
+      libapache2-mod-php5.6
 
 COPY apache_default /etc/apache2/sites-available/000-default.conf
 COPY run /usr/local/bin/run
