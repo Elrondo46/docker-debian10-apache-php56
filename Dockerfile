@@ -3,7 +3,8 @@ MAINTAINER Elrondo46 <dd@dd.fr>
 
 VOLUME ["/var/www"]
 
-RUN apt install -y ca-certificates \
+RUN RUN apt update && \ 
+    apt install -y ca-certificates \
     apt-transport-https \
     wget
 
