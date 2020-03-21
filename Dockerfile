@@ -1,5 +1,5 @@
 FROM debian:buster
-MAINTAINER Alexander Schenkel <alex@alexi.ch>
+MAINTAINER Elrondo46 <dd@dd.fr>
 
 VOLUME ["/var/www"]
 
