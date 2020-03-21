@@ -1,4 +1,4 @@
-apache-php56
+debian9-apache-php56
 ===================================
 
 A Docker image based on Debian Jessie, serving PHP 5.6 running as Apache Module. Useful for Web developers in need for a fixed PHP version. In addition, the `error_reporting` setting in php.ini is configurable per container via environment variable.
@@ -18,7 +18,8 @@ $ docker run -d -P bylexus/apache-php56
 With all the options:
 
 ```bash
-$ docker run -d -p 8080:80 \
+$ docker run -d -p 80:80 \
+    -p 443:443
     -v /home/user/webroot:/var/www \
     -e PHP_ERROR_REPORTING='E_ALL & ~E_STRICT' \
     bylexus/apache-php56
@@ -26,6 +27,7 @@ $ docker run -d -p 8080:80 \
 
 * `-v [local path]:/var/www` maps the container's webroot to a local path
 * `-p [local port]:80` maps a local port to the container's HTTP port 80
+* `-p [local port]:443` maps a local port to the container's HTTP port 443
 * `-e PHP_ERROR_REPORTING=[php error_reporting settings]` sets the value of `error_reporting` in the php.ini files.
 
 ### Access apache logs
@@ -37,7 +39,7 @@ Apache is configured to log both access and error log to STDOUT. So you can simp
 
 Installed packages
 -------------------
-* Debian 8 (jessie)
+* Debian 9
 * locales
 * apache2
 * php5
