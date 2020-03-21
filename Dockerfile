@@ -8,8 +8,8 @@ RUN apt update && \
     apt-transport-https \
     wget
 
-RUN wget -q https://packages.sury.org/php/apt.gpg -O- | sudo apt-key add - && \
-echo "deb https://packages.sury.org/php/ stretch main" | sudo tee /etc/apt/sources.list.d/php.list
+RUN wget -q https://packages.sury.org/php/apt.gpg -O- | apt-key add - && \
+echo "deb https://packages.sury.org/php/ stretch main" | tee /etc/apt/sources.list.d/php.list
 
 RUN apt update && \
     apt install -y \
