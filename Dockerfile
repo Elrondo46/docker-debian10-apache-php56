@@ -9,7 +9,7 @@ RUN apt-get update && \
     wget
 
 RUN wget -q https://packages.sury.org/php/apt.gpg -O- | apt-key add - && \
-echo "deb https://packages.sury.org/php/ stretch main" | tee /etc/apt/sources.list.d/php.list
+echo "deb https://packages.sury.org/php/ buster main" | tee /etc/apt/sources.list.d/php.list
 
 RUN apt-get update && \
     apt-get install -y \
@@ -35,6 +35,7 @@ RUN apt-get update && \
       php5.6-opcache \
       php5.6-readline \
       php5.6-sybase \
+      php5.6-curl \
       python-certbot-apache \
       bash \
       libapache2-mod-php5.6
