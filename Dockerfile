@@ -22,10 +22,20 @@ RUN apt-get update && \
       php5.6-mysql \
       php5.6-xml \
       php5.6-json \
-      php5.6-soap-dbgsym \
       php5.6-soap \
       php5.6-zip \
-      php5.6-zip-dbgsym \
+      php5.6-bcmath \
+      php5.6-bz2 \
+      php5.6-dba \
+      php5.6-gd \
+      php5.6-gmp \
+      php5.6-interbase \
+      php5.6-intl \
+      php5.6-mcrypt \
+      php5.6-opcache \
+      php5.6-readline \
+      php5.6-sybase \
+      python-certbot-apache \
       bash \
       libapache2-mod-php5.6
 
@@ -33,6 +43,7 @@ COPY apache_default /etc/apache2/sites-available/000-default.conf
 COPY run /usr/local/bin/run
 RUN chmod +x /usr/local/bin/run
 RUN a2enmod rewrite
+RUN a2enmod php5.6
 
 EXPOSE 80
 EXPOSE 443
