@@ -41,6 +41,11 @@ RUN apt-get update && \
       bash \
       libapache2-mod-php5.6
 
+ENV SITE_DB_HOST=db
+ENV SITE_DB_NAME=name
+ENV SITE_DB_USER=user
+ENV SITE_DB_PASSWORD=password
+
 COPY apache_default /etc/apache2/sites-available/000-default.conf
 COPY run /usr/local/bin/run
 RUN chmod +x /usr/local/bin/run
