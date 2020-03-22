@@ -37,6 +37,7 @@ RUN apt-get update && \
       php5.6-sybase \
       php5.6-curl \
       python-certbot-apache \
+      vim \
       bash \
       libapache2-mod-php5.6
 
